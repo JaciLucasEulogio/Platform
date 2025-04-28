@@ -1,7 +1,3 @@
-import { Resend } from 'resend';
-
-const resend = new Resend('re_WGgg8hXp_JU5Qn5t3MU6nCGZbe4s7bEfQ');
-
 export const emails = {
   sendProjectInvitation: async ({
     to,
@@ -18,6 +14,15 @@ export const emails = {
     projectName: string;
     invitedByUsername: string;
   }) => {
+    console.log({
+      to,
+      projectId,
+      role,
+      username,
+      projectName,
+      invitedByUsername,
+    });
+
     const response = await fetch('/api/invite-user', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

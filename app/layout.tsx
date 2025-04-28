@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { AppProvider } from './AppProvider';
+import  FloatingChat  from '@/components/FloatingChat';
 
 const fontSans = Inter({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         )}
       >
         <AppProvider>{children}</AppProvider>
+        <FloatingChat />
       </body>
     </html>
   );
